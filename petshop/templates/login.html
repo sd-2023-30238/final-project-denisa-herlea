@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+
+<section class="py-5 text-center container">
+
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+       <h1 class="h1 fw-bold"><span style="color: #e64e4e;">P</span><span style="color: white;">ET </span><span style="color: #e64e4e;">S</span><span style="color: white;">HOP</span></h1>
+       <h2 class="h1 fw-bold"><span style="color: white;">and </span><span style="color:#3895a8;">P</span><span style="color: white;">et </span><span style="color: #3895a8;">R</span><span style="color: white;">escue </span><span style="color: #3895a8;">C</span><span style="color: white;">enter</span></h2>
+        <p class="lead text-muted"><span style="color: black;">Vă rugăm, autentificați-vă:</span> </p>
+
+          <form method="post" id="myForm" action="{% url 'petshop:login_view' %}" >
+             {% csrf_token %}
+             {{ form.as_p }}
+
+            <label for="username"><span style="color: #3895a8; font-size: 22px;">Username</span></label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+
+            <label for="username"><span style="color: #3895a8; font-size: 22px;">Password</span></label>
+            <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+
+            <button class="btn btn-primary my-2" style="background-color: #e64e4e;" type="submit" id="signin" >Sign in</button>
+          </form>
+
+         <a href="{% url 'petshop:login_register_view' %}" class="btn btn-primary my-2" style="background-color: #3895a8;">Create account</a>
+      </div>
+    </div>
+
+</section>
+<style>
+
+ </style>
+{% endblock %}
