@@ -19,7 +19,7 @@ class Category(models.Model):
         return self.name
 
     #def get_absolute_url(self):
-    #    return reverse('petshop:category_list', args=[self.slug])
+     #   return reverse('petshop:category_list', args=[self.slug])
 
 
 class Product(models.Model):
