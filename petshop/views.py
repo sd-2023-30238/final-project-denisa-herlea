@@ -51,29 +51,41 @@ def login_register_view(request):
 
 
 def home(request):
-    return render(request, 'home.html')
-
-
-def categories(request):
-    return {
-        'categories': Category.objects.all()
-    }
-
-
-def all_products(request):
     products = Product.objects.all()
-    return render(request, 'petshop/home.html', {'products': products})
+    categories = Category.objects.all()
+    return render(request, 'home.html', {'category': categories, 'products': products})
 
 
-"""
+def caini(request):
+    products = Product.objects.filter(category=1)
+    return render(request, 'category.html', {'products': products})
+
+
+def pisici(request):
+    products = Product.objects.filter(category=2)
+    return render(request, 'category.html', {'products': products})
+
+
+def rozatoare(request):
+    products = Product.objects.filter(category=3)
+    return render(request, 'category.html', {'products': products})
+
+
+def reptile(request):
+    products = Product.objects.filter(category=4)
+    return render(request, 'category.html', {'products': products})
+
+
+def pasari(request):
+    products = Product.objects.filter(category=5)
+    return render(request, 'category.html', {'products': products})
+
+
+def animaleDeFerma(request):
+    products = Product.objects.filter(category=6)
+    return render(request, 'category.html', {'products': products})
+
+
 def product_detail(request, slug):
     products = get_object_or_404(Product, slug=slug, in_stock=True)
-    return render(request, 'petshop/products/detail.html', {'product': products})
-
-
-
-def category_list(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    products = Product.objects.filter(category=category)
-    return render(request, 'category.html', {'category': category, 'products': products})
-"""
+    return render(request, 'product_detail.html', {'product': products})

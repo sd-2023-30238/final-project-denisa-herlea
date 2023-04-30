@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('petshop.urls', namespace='petshop')),
+    path('adoption', include('adoption.urls', namespace='adoption')),
 ]
 
 if settings.DEBUG:

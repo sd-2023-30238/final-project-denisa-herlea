@@ -1,0 +1,55 @@
+{% extends "./base2.html" %}
+{% load static %}
+{% block title %}Adoptie{% endblock %}
+{% block content %}
+
+
+  <div class="b-example-divider"></div>
+
+  <div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom"><span style="color: #3895a8;">Alege un adapost din apropierea ta!</span></h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        </div>
+        <div>
+          <h3 class="fs-2">Adapostul din Alba-Iulia</h3>
+          <p>Adresa: Municipiul Alba Iulia, str. Rogozului, F.N.</p>
+          <p>Program: Luni-Vineri 08.00-16.00, Sambata-Duminica 08:00-12:00</p>
+          <a href="{% url 'adoption:all_pets_alba' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">
+            Adopta un animal
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+        </div>
+        <div>
+          <h3 class="fs-2">Adapostul din Sibiu</h3>
+          <p>Adresa: Mun. Mediaş, strada Moşnei nr. 90</p>
+          <p>Program:  Luni – Vineri: 13.00 – 15.00</p>
+          <a href="{% url 'adoption:all_pets_sibiu' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">
+            Adopta un animal
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
+        </div>
+        <div>
+          <h3 class="fs-2">Adapostul din Cluj-Napoca</h3>
+           <p>Adresa: Municipiul Cluj Napoca, str. Bobalnei, nr. 65</p>
+           <p>Program:   Luni – Vineri: 10.00 – 18.00</p>
+          <a href="{% url 'adoption:all_pets_cluj' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">
+            Adopta un animal
+          </a>
+        </div>
+      </div>
+    </div>
+    <a href="{% url 'petshop:home' %}" class="btn btn-primary my-2" style="background-color: #3895a8;">Revenire</a>
+  </div>
+
+{% endblock %}
