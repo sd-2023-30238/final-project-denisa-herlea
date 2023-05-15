@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/adoption.iml" filepath="$PROJECT_DIR$/.idea/adoption.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../basket/.idea/basket.iml" filepath="$PROJECT_DIR$/../basket/.idea/basket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../order/.idea/order.iml" filepath="$PROJECT_DIR$/../order/.idea/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/../petshop/.idea/petshop.iml" filepath="$PROJECT_DIR$/../petshop/.idea/petshop.iml" />
     </modules>
   </component>

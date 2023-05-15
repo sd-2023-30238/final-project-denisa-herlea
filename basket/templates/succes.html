@@ -1,0 +1,53 @@
+{% extends "./base2.html" %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="h1 fw-bold">Comanda a fost plasata cu succes!</h1>
+      </div>
+    </div>
+</section>
+
+
+<main class="pt-5">
+  <div class="container">
+    <h1 class="h5">Review</h1>
+     {% for item in basket %}
+     {% with product=item.product %}
+    <div class="row mb-4 border product-item">
+      <div class="col-md-3 col-lg-2 order-md-first bg-light">
+        <img class="img-fluid mx-auto d-block" width="120px" alt="image" src="{{ product.image.url }}">
+      </div>
+      <div class="col-md-9 col-lg-10 ps-md-3 ps-lg-10">
+        <a href="{{ product.get_absolute_url }}" class="text-decoration-none text-reset">
+          <h1 class="h5 pt-2">{{ product.name }}</h1>
+        </a>
+        <div class="border">
+          <div class="col border-bottom">
+            <div class="row p-3">
+              <div class="col-6 text-end"><span class="h6 fw-bold">{{ product.price }} RON</span></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row p-3">
+              <div class="col-12">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endwith %}
+    {% endfor %}
+    <div class="col-12 text-end">
+      <div class="h6 fw-bold">Total: <div id="subtotal" class="d-inline-flex">{{basket.get_total_price}} RON</div></div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

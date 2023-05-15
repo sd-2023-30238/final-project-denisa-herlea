@@ -46,8 +46,8 @@ def add(request):
 
         subject = 'Adoption request received'
         message = f'Hello {nume} {prenume},\n\nThank you for submitting your adoption request. We have received your request and will process it shortly.\n\nBest regards,\nThe Pet Shop and Pet Rescue Center team'
-        from_email = 'herleadenisa12@gmail.com'
+        from_email = 'herleadenisa12@yahoo.com'
         recipient_list = [email]
         #send_mail(subject, message, from_email, recipient_list)
 
-    return render(request, 'succes.html')
+    return render(request, 'succes_adopt.html')

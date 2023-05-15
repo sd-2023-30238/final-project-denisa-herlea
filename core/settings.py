@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jer-g-7e@0luoy3^fh)#rei!)b=12m=qv(yzz-f^+bqno$w+40
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'petshop',
+    'basket',
     'adoption',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'basket.context_processors.basket',
             ],
         },
     },
@@ -114,6 +117,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+USE_L10N = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -126,3 +131,14 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# Basket session ID
+BASKET_SESSION_ID = 'basket'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_DEBUG = True
