@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.models import User
 
+from .charts import AdoptionChartObserver, ChartCreatorFactory, ChartDecorator
 from .models import Category, Product
 from .forms import UserForm
 
@@ -86,3 +87,29 @@ def animaleDeFerma(request):
 def product_detail(request, slug):
     products = get_object_or_404(Product, slug=slug, in_stock=True)
     return render(request, 'product_detail.html', {'product': products})
+
+
+def statistici(request):
+    return render(request, 'statistici.html')
+
+
+def statistici_view_alba(request):
+    chart_creator = ChartCreatorFactory.create_chart_creator('alba')
+    chart_observer = AdoptionChartObserver()
+    chart_creator.attach(chart_observer)
+    decorated_chart_creator = ChartDecorator(chart_creator)
+    return decorated_chart_creator.create_chart(request)
+
+def statistici_view_cluj(request):
+    chart_creator = ChartCreatorFactory.create_chart_creator('cluj')
+    chart_observer = AdoptionChartObserver()
+    chart_creator.attach(chart_observer)
+    decorated_chart_creator = ChartDecorator(chart_creator)
+    return decorated_chart_creator.create_chart(request)
+
+def statistici_view_sibiu(request):
+    chart_creator = ChartCreatorFactory.create_chart_creator('sibiu')
+    chart_observer = AdoptionChartObserver()
+    chart_creator.attach(chart_observer)
+    decorated_chart_creator = ChartDecorator(chart_creator)
+    return decorated_chart_creator.create_chart(request)

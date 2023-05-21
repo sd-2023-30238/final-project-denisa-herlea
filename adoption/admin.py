@@ -10,7 +10,7 @@ class AnimalAdmin(admin.ModelAdmin):
 
 
 class AdoptionAdmin(admin.ModelAdmin):
-    list_display = ['nume', 'prenume', 'adresa', 'oras', 'telefon', 'email']
+    list_display = ['user', 'nume', 'prenume', 'adresa', 'oras', 'telefon', 'email', 'adapost']
 
 
 admin.site.register(Adoption, AdoptionAdmin)

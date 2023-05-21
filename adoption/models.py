@@ -32,7 +32,9 @@ class Animal(models.Model):
 
 
 class Adoption(models.Model):
-
+    
+    id = models.AutoField(primary_key=True)
+    user = models.CharField(max_length=255, db_index=True)
     nume = models.CharField(max_length=50)
     prenume = models.CharField(max_length=50)
     adresa = models.CharField(max_length=250)
@@ -41,6 +43,7 @@ class Adoption(models.Model):
     email = models.CharField(max_length=100, default='')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    adapost=models.CharField(max_length=50)
 
     class Meta:
         ordering = ('-created',)

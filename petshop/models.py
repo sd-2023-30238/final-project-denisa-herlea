@@ -3,6 +3,10 @@ from django.db import models
 from django.urls import reverse
 
 
+class User(models.Model):
+    username = models.CharField(max_length=255, db_index=True)
+
+
 class ProductManager(models.Manager):
     def get_queryset(self):
         return super(ProductManager, self).get_queryset().filter(in_stock=True)

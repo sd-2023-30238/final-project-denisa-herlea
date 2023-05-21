@@ -1,0 +1,22 @@
+{% extends "./base2.html" %}
+
+{% load static %}
+{% block title %}Charts{% endblock %}
+
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+       <h1 class="h1 fw-bold"><span style="color: #e64e4e;">P</span><span style="color: white;">ET </span><span style="color: #e64e4e;">S</span><span style="color: white;">HOP</span></h1>
+       <h2 class="h1 fw-bold"><span style="color: white;">and </span><span style="color:#3895a8;">P</span><span style="color: white;">et </span><span style="color: #3895a8;">R</span><span style="color: white;">escue </span><span style="color: #3895a8;">C</span><span style="color: white;">enter</span></h2>
+        <p class="lead text-muted" style="color: white;">Vizualizati statisticile! </p>
+
+         <a href="{% url 'petshop:statistici_view_alba' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">Statistici Alba-Iulia</a>
+         <a href="{% url 'petshop:statistici_view_cluj' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">Statistici Cluj-Napoca</a>
+         <a href="{% url 'petshop:statistici_view_sibiu' %}" class="btn btn-primary my-2" style="background-color: #e64e4e;">Statistici Sibiu</a>
+         <a href="{% url 'petshop:home' %}" class="btn btn-primary my-2" style="background-color: green;">Revenire la pagina principala</a>
+
+      </div>
+    </div>
+</section>
+{% endblock %}
