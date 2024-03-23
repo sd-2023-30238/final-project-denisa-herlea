@@ -1,0 +1,57 @@
+{% extends "./base2.html" %}
+{% load static %}
+{% block title %}Alba{% endblock %}
+{% block content %}
+
+
+<section class="py-5 text-center container">
+
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+       <h1 class="h1 fw-bold"><span style="color: #e64e4e;">P</span><span style="color: white;">ET </span><span style="color: #e64e4e;">S</span><span style="color: white;">HOP</span></h1>
+       <h2 class="h1 fw-bold"><span style="color: white;">and </span><span style="color:#3895a8;">P</span><span style="color: white;">et </span><span style="color: #3895a8;">R</span><span style="color: white;">escue </span><span style="color: #3895a8;">C</span><span style="color: white;">enter</span></h2>
+        <p class="lead text-muted"><span style="color: black;">Formular de adoptie</span> </p>
+
+          <form method="post" id="myForm" action="{% url 'adoption:add' %}" >
+             {% csrf_token %}
+             {{ form.as_p }}
+
+            <label for="nume"><span style="color: #3895a8; font-size: 22px;">Nume</span></label>
+            <input type="text" class="form-control" name="nume" id="nume" placeholder="nume">
+
+            <label for="prenume"><span style="color: #3895a8; font-size: 22px;">Prenume</span></label>
+            <input type="text" class="form-control" name="prenume" id="prenume" placeholder="prenume">
+
+            <label for="adresa"><span style="color: #3895a8; font-size: 22px;">Adresa</span></label>
+            <input type="text" class="form-control" name="adresa" id="adresa" placeholder="adresa">
+
+            <label for="oras"><span style="color: #3895a8; font-size: 22px;">Oras</span></label>
+            <input type="text" class="form-control" name="oras" id="oras" placeholder="oras">
+
+            <label for="telefon"><span style="color: #3895a8; font-size: 22px;">Telefon</span></label>
+            <input type="text" class="form-control" name="telefon" id="telefon" placeholder="telefon">
+
+            <label for="email"><span style="color: #3895a8; font-size: 22px;">Email</span></label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email">
+
+            <label for="adapost"><span style="color: #3895a8; font-size: 22px;">Adapost</span></label>
+                <select name="adapost" id="adapost">
+                        <option value="alba">Alba-Iulia</option>
+                         <option value="cluj">Cluj-Napoca</option>
+                         <option value="sibiu">Sibiu</option>
+                </select>
+
+            <button class="btn btn-primary my-2" style="background-color: #e64e4e;" type="submit" id="adopta" >Adopta</button>
+          </form>
+
+         <a href="{% url 'adoption:adoption_summary' %}" class="btn btn-primary my-2" style="background-color: #3895a8;">Revenire</a>
+      </div>
+    </div>
+
+</section>
+<style>
+
+ </style>
+
+
+{% endblock %}
